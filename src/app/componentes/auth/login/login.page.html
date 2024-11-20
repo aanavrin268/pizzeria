@@ -1,50 +1,69 @@
 <ion-content>
   <div class="main-container">
-    <div class="logo-container">
-  
-      <h1 class="brand-name">Pizzería Mako</h1>
+    <!-- Loader -->
+    <div class="pizza-loader" [ngClass]="{'hide': !loading}">
+      <div class="pizza">
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+      </div>
+      <p class="loading-text">Preparando tu sesión...</p>
     </div>
 
-    <div class="messages">
-      <span class="text-title">¡Bienvenido de nuevo!</span>
-      <span class="text-sub">Tu deliciosa pizza está a solo un paso</span>
-    </div>
+    <div class="content-card animate__animated animate__fadeIn">
+      <div class="logo-container animate__animated animate__fadeInDown">
+        <i class="bi bi-shop logo-icon"></i>
+        <h1 class="brand-name">Pizzería Mako</h1>
+      </div>
 
-    <form [formGroup]="fgLogin" (ngSubmit)="login()">
-      <div class="login">
+      <div class="messages animate__animated animate__fadeInUp">
+        <span class="text-title">¡Bienvenido de nuevo!</span>
+        <span class="text-sub">Tu deliciosa pizza está a solo un paso</span>
+      </div>
+
+      <form [formGroup]="fgLogin" (ngSubmit)="login()" class="login">
         <div class="input-container">
-
           <input 
             type="text" 
             placeholder="Nombre de usuario"  
             class="m-input"
             formControlName="name">
+          <i class="bi bi-person input-icon"></i>
+          <div class="input-validation" *ngIf="fgLogin.get('name')?.invalid && fgLogin.get('name')?.touched">
+            <i class="bi bi-exclamation-circle"></i>
+            <span>Usuario requerido</span>
+          </div>
         </div>
 
         <div class="input-container">
-
           <input 
             type="password" 
             placeholder="Contraseña"  
             class="m-input"
             formControlName="password">
+          <i class="bi bi-lock input-icon"></i>
+          <div class="input-validation" *ngIf="fgLogin.get('password')?.invalid && fgLogin.get('password')?.touched">
+            <i class="bi bi-exclamation-circle"></i>
+            <span>Contraseña requerida</span>
+          </div>
         </div>
 
-        <span class="pass">¿Olvidaste tu contraseña?</span>
+        <a class="pass">¿Olvidaste tu contraseña?</a>
 
         <button 
           class="btn-login" 
           [disabled]="fgLogin.invalid"
           type="submit">
           <span>Iniciar sesión</span>
-     
+          <i class="bi bi-arrow-right-circle btn-icon"></i>
         </button>
-      </div>
-    </form>
+      </form>
 
-    <div class="footer">
-      <span>¿No tienes cuenta?</span>
-      <span class="text-link">Regístrate aquí</span>
+      <div class="footer">
+        <span>¿No tienes cuenta? </span>
+        <a class="text-link">Regístrate aquí</a>
+      </div>
     </div>
   </div>
 </ion-content>
