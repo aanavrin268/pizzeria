@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeadersComponent } from "../shared/headers/headers.component";
 import { IonicModule } from "@ionic/angular";
-import {NgForOf} from "@angular/common";  // Asegúrate de importar IonicModule solo una vez
+import {CommonModule, NgForOf} from "@angular/common";  // Asegúrate de importar IonicModule solo una vez
 
 @Component({
   selector: 'app-home',
@@ -13,12 +13,14 @@ import {NgForOf} from "@angular/common";  // Asegúrate de importar IonicModule 
     ReactiveFormsModule,
     HeadersComponent,
     IonicModule,
-    NgForOf,
+    NgForOf, CommonModule
   ],
 })
 export class HomePage {
 
   protected list_paquetes: any;
+  protected list_top: any;
+  protected showNoti: boolean = false;
 
   public form = this.fBuilder.group({
     paquete: ['', Validators.required],
@@ -35,6 +37,21 @@ export class HomePage {
 
 
   ]
+
+  this.list_top = [
+    {title: "Hamburguesa", img: "assets/burguer.png"}, {title: "Pizza", img: "assets/pizza.png"}, {title: "Spaguetti",  img: "assets/espa.png"}
+    , {title: "Spaguetti",  img: "assets/espa.png"} , {title: "Spaguetti",  img: "assets/espa.png"}
+  ]
+  }
+
+
+  addPaquete(paquete: any){
+      this.showNoti = !this.showNoti;
+
+      setTimeout(() => {
+        this.showNoti = !this.showNoti;
+
+      }, 2000);
   }
 
   onSubmit() {
