@@ -7,17 +7,19 @@
     <div class="main-container">
         <span class="text-order">Orden #100</span>
 
-        <div class="card-container">
-          <div class="card" *ngFor="let item of list_paquetes">
-            <span class="text-card-title">
-              {{ item.title}}
-            </span>
 
-            <span class="txt-card-sub">{{ item.text }}</span>
-
-            <span class="txt-card-price">{{ item.price}}</span>
-
+        <div class="container mt-4">
+          <h2>Paquetes</h2>
+          <div class="d-flex overflow-auto">
+            <div *ngFor="let paquete of list_paquetes" class="cards" style="width: 400px; margin-right: 15px;">
+              <div class="card-body">
+                <h5 class="card-title">{{ paquete.title }}</h5>
+                <p class="card-text">{{ paquete.text }}</p>
+                <p class="card-text"><strong>Precio:</strong> ${{ paquete.price }}</p>
+              </div>
+            </div>
           </div>
         </div>
+        
     </div>
 </ion-content>
