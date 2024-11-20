@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-cart.component.scss'],
   standalone: true
 })
-export class ShoppingCartComponent   {
+export class ShoppingCartComponent {
 
-  constructor() { }
-
-
+  constructor() {
+  }
 
 }
