@@ -1,6 +1,23 @@
 <ion-content>
-    <div class="main-container">
-      <span>GHome</span>
+  <div class="header">
+    <app-headers></app-headers>
 
+  </div>
+
+    <div class="main-container">
+        <span class="text-order">Orden #100</span>
+
+        <div class="card-container">
+          <div class="card" *ngFor="let item of list_paquetes">
+            <span class="text-card-title">
+              {{ item.title}}
+            </span>
+
+            <span class="txt-card-sub">{{ item.text }}</span>
+
+            <span class="txt-card-price">{{ item.price}}</span>
+
+          </div>
+        </div>
     </div>
 </ion-content>
