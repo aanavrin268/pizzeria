@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonSkeletonText, IonText } from '@ionic/angular/standalone';
 
+
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [IonText, IonSkeletonText, IonItem, IonHeader, IonToolbar, IonTitle, IonContent,
-      ReactiveFormsModule
-  ],
+    ReactiveFormsModule
+],
 })
-export class HomePage {
+export class LoginPage implements OnInit {
 
   protected fgLogin: FormGroup;
 
-  constructor(private fBuilder: FormBuilder) {
+  constructor(private fBuilder: FormBuilder, private router: Router) {
     this.fgLogin = fBuilder.group({
       name: ["", Validators.required],
       password: ["", Validators.required]
@@ -25,5 +27,10 @@ export class HomePage {
 
   login(){
     console.log("login!")
+    this.router.navigate(["/home"]);
   }
+
+  ngOnInit() {
+  }
+
 }

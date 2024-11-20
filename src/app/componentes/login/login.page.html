@@ -1,0 +1,37 @@
+<ion-content>
+  <div class="main-container">
+    <div class="messages">
+      <span class="text-title">Hola de nuevo!</span>
+      <span class="text-sub"> Inicia sesión para empezar!</span>
+    </div>
+  <form [formGroup]="fgLogin" (ngSubmit)="login()">
+    <div class="login">
+      <input type="text" placeholder="Nombre de usuario"  class="m-input"
+        formControlName="name">
+    
+
+      <input type="password" placeholder="Contraseña"  class="m-input"
+        formControlName="password">
+
+      <span class="pass">Olvide mi contraseña</span>
+
+      <button class="btn-login" [disabled]="fgLogin.invalid"
+        type="submit"
+      >Iniciar sesión</button>
+    </div>
+  </form>
+   
+
+   
+
+
+    <div class="footer">
+      <span>No tienes cuenta!</span>
+      <span class="text-link">Crear una</span>
+
+    </div>
+
+  
+
+  </div>
+</ion-content>

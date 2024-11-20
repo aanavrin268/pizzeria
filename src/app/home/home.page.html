@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <div class="main-container">
+      <div class="messages">
+        <span class="text-title">Hola de nuevo!</span>
+        <span class="text-sub"> Inicia sesión para empezar!</span>
+      </div>
+    <form [formGroup]="fgLogin" (ngSubmit)="login()">
+      <div class="login">
+        <input type="text" placeholder="Nombre de usuario"  class="m-input"
+          formControlName="name">
+      
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <input type="password" placeholder="Contraseña"  class="m-input"
+          formControlName="password">
+  
+        <span class="pass">Olvide mi contraseña</span>
+  
+        <button class="btn-login" [disabled]="fgLogin.invalid"
+          type="submit"
+        >Iniciar sesión</button>
+      </div>
+    </form>
+     
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+     
+
+
+      <div class="footer">
+        <span>No tienes cuenta!</span>
+        <span class="text-link">Crear una</span>
+
+      </div>
+
+    
+
+    </div>
 </ion-content>

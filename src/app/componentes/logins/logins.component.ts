@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonSkeletonText, IonText } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-logins',
+  templateUrl: './logins.component.html',
+  styleUrls: ['./logins.component.scss'],
   standalone: true,
   imports: [IonText, IonSkeletonText, IonItem, IonHeader, IonToolbar, IonTitle, IonContent,
-      ReactiveFormsModule
-  ],
+    ReactiveFormsModule
+],
 })
-export class HomePage {
+export class LoginsComponent  implements OnInit {
 
   protected fgLogin: FormGroup;
 
@@ -23,7 +23,12 @@ export class HomePage {
     })
   }
 
+
+  ngOnInit() {}
+
   login(){
     console.log("login!")
   }
+ 
+
 }
