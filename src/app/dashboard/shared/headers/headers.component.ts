@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {IonicModule, ModalController} from "@ionic/angular";
+import {ShoppingCartComponent} from "../../shopping-cart/shopping-cart.component";
 
 @Component({
   selector: 'app-headers',
   templateUrl: './headers.component.html',
   styleUrls: ['./headers.component.scss'],
   standalone: true,
+  imports: [ShoppingCartComponent, IonicModule]
 })
-export class HeadersComponent  implements OnInit {
+export class HeadersComponent   {
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
-  ngOnInit() {}
-
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ShoppingCartComponent,
+    });
+    modal.onWillDismiss().then((data) => {
+      console.log('Modal dismissed with data:', data);
+    });
+    return await modal.present();
+  }
 }
