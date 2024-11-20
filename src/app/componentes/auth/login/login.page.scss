@@ -1,15 +1,23 @@
 :host {
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --primary-color: #ff416c;
-  --secondary-color: #ff4b2b;
-  --text-dark: #2d3436;
-  --text-light: #636e72;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --pizza-red: #D73C2C;
+  --pizza-dark-red: #B32B1B;
+  --pizza-green: #347A3C;
+  --pizza-yellow: #FFA41B;
+  --pizza-beige: #FFF8E7;
+  --pizza-brown: #8B4513;
+  --text-color: #2D2A26;
 }
 
 .main-container {
   min-height: 100%;
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  background-color: var(--pizza-beige);
+  /* Patrón de cuadrícula estilo mantel de pizzería */
+  background-image: 
+    linear-gradient(45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%);
+  background-size: 20px 20px;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -17,6 +25,7 @@
   position: relative;
   overflow: hidden;
 
+  /* Patrón de pequeñas pizzas en el fondo */
   &::before {
     content: '';
     position: absolute;
@@ -24,55 +33,148 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544V0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.8 7.07 49.212 0 42.143v-2.83zm0 5.657l5.657 5.657-1.414 1.415L0 47.8v-2.83zm0 5.657l2.828 2.83-1.414 1.413L0 53.456v-2.83zM54.627 60L30 35.373 5.373 60H8.2L30 38.2 51.8 60h2.827zm-5.656 0L30 41.03 11.03 60h2.828L30 43.858 46.142 60h2.83zm-5.656 0L30 46.686 16.686 60h2.83L30 49.515 40.485 60h2.83zm-5.657 0L30 52.343 22.344 60h2.83L30 55.172 34.828 60h2.83zM32 60l-2-2-2 2h4zM59.716 0l-28 28 1.414 1.414L60 2.544V0h-.284zM60 5.373L34.544 30.828l1.414 1.415L60 8.2V5.374zm0 5.656L37.373 33.656l1.414 1.414L60 13.86v-2.83zm0 5.656l-19.8 19.8 1.415 1.413L60 19.514v-2.83zm0 5.657l-16.97 16.97 1.414 1.415L60 25.172v-2.83zM60 28L45.858 42.142l1.414 1.414L60 30.828V28zm0 5.657L48.686 44.97l1.415 1.415 9.9-9.9v-2.828zm0 5.657L51.515 47.8l1.414 1.413 7.07-7.07v-2.83zm0 5.657l-5.657 5.657 1.414 1.415L60 47.8v-2.83zm0 5.657l-2.828 2.83 1.414 1.413L60 53.456v-2.83zM39.9 16.385l1.414-1.414L30 3.658 18.686 14.97l1.415 1.415 9.9-9.9 9.9 9.9zm-2.83 2.828l1.415-1.414L30 9.313 21.515 17.8l1.414 1.413 7.07-7.07 7.07 7.07zm-2.827 2.83l1.414-1.416L30 14.97l-5.657 5.657 1.414 1.415L30 17.8l4.243 4.242zm-2.83 2.827l1.415-1.414L30 20.626l-2.828 2.83 1.414 1.414L30 23.456l1.414 1.414zM56.87 59.414L58.284 58 30 29.716 1.716 58l1.414 1.414L30 32.544l26.87 26.87z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-    animation: scroll 20s linear infinite;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D73C2C' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3Ccircle cx='27' cy='27' r='2'/%3E%3Ccircle cx='33' cy='27' r='2'/%3E%3Ccircle cx='30' cy='33' r='2'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
 
 .content-card {
-  background: var(--card-bg);
+  background: white;
   border-radius: 24px;
   padding: 2rem;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 8px 32px var(--shadow-color);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  /* Franja tricolor estilo bandera italiana */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+      var(--pizza-red) 33%, 
+      var(--pizza-green) 33%, 
+      var(--pizza-green) 66%, 
+      var(--pizza-yellow) 66%
+    );
+  }
+
+  /* Decoración de borde estilo mantel */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--pizza-red) 0,
+      var(--pizza-red) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+    opacity: 0.1;
+  }
 }
 
 .logo-container {
   text-align: center;
   margin-bottom: 2rem;
   
-  .logo-icon {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+  .logo-wrapper {
+    background: var(--pizza-red);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 12px rgba(215, 60, 44, 0.3);
+    border: 3px solid white;
+    transform: rotate(-5deg);
+    
+    .logo-icon {
+      font-size: 2.75rem;
+      color: white;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
   }
   
   .brand-name {
-    color: var(--text-dark);
-    font-size: 1.75rem;
-    font-weight: 700;
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
     margin: 0;
+    text-shadow: 2px 2px 0 rgba(215, 60, 44, 0.1);
+    
+    span {
+      color: var(--pizza-red);
+      font-style: italic;
+    }
+  }
+
+  .established {
+    font-size: 0.875rem;
+    color: var(--pizza-brown);
+    font-style: italic;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    
+    &::before, &::after {
+      content: '•';
+      color: var(--pizza-yellow);
+      margin: 0 0.5rem;
+    }
   }
 }
 
 .messages {
   text-align: center;
   margin-bottom: 2rem;
+  background: rgba(255, 248, 231, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
   
   .text-title {
     display: block;
-    color: var(--text-dark);
-    font-size: 1.25rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
   }
 
   .text-sub {
     display: block;
-    color: var(--text-light);
+    color: var(--pizza-brown);
     font-size: 0.875rem;
+    position: relative;
+    padding: 0 1.5rem;
+    
+    &::before, &::after {
+      content: '🍕';
+      position: absolute;
+      font-size: 1rem;
+    }
+    
+    &::before {
+      left: 0;
+    }
+    
+    &::after {
+      right: 0;
+    }
   }
 }
 
@@ -86,37 +188,34 @@
       left: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--primary-color);
+      color: var(--pizza-red);
       font-size: 1.25rem;
       transition: all 0.3s ease;
     }
 
     .m-input {
       width: 100%;
-      padding: 0.875rem 1rem 0.875rem 3rem;
-      border: 2px solid transparent;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 2px solid rgba(139, 69, 19, 0.1);
       border-radius: 12px;
-      background: rgba(0, 0, 0, 0.03);
+      background: white;
       font-size: 1rem;
       transition: all 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: var(--primary-color);
-        background: white;
-        box-shadow: 0 4px 12px var(--shadow-color);
+        border-color: var(--pizza-red);
+        box-shadow: 0 4px 12px rgba(215, 60, 44, 0.1);
 
         & + .input-icon {
           transform: translateY(-50%) scale(1.1);
+          color: var(--pizza-dark-red);
         }
       }
 
       &.ng-invalid.ng-touched {
-        border-color: #dc3545;
-        
-        & + .input-icon {
-          color: #dc3545;
-        }
+        border-color: var(--pizza-red);
+        background-color: rgba(215, 60, 44, 0.02);
       }
     }
 
@@ -125,30 +224,36 @@
       right: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      color: #dc3545;
+      color: var(--pizza-red);
       display: flex;
       align-items: center;
       gap: 0.5rem;
       font-size: 0.75rem;
+      background: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(215, 60, 44, 0.1);
     }
   }
 
   .pass {
     display: block;
     text-align: right;
-    color: var(--primary-color);
+    color: var(--pizza-red);
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
     text-decoration: none;
+    font-style: italic;
     
     &:hover {
       text-decoration: underline;
+      color: var(--pizza-dark-red);
     }
   }
 
   .btn-login {
     width: 100%;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--pizza-red);
     color: white;
     border: none;
     border-radius: 12px;
@@ -161,15 +266,35 @@
     gap: 0.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255,255,255,0.2), transparent);
+    }
 
     &:disabled {
       opacity: 0.7;
       cursor: not-allowed;
+      background: #999;
     }
 
     &:not(:disabled):hover {
+      background: var(--pizza-dark-red);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
+      box-shadow: 0 4px 12px rgba(215, 60, 44, 0.3);
+
+      .btn-icon {
+        transform: translateX(3px);
+      }
     }
 
     .btn-icon {
@@ -182,29 +307,32 @@
 .footer {
   text-align: center;
   margin-top: 2rem;
-  color: var(--text-light);
+  padding-top: 1.5rem;
+  border-top: 2px dashed rgba(139, 69, 19, 0.1);
+  color: var(--pizza-brown);
   font-size: 0.875rem;
   
   .text-link {
-    color: var(--primary-color);
+    color: var(--pizza-red);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.3s ease;
     
     &:hover {
+      color: var(--pizza-dark-red);
       text-decoration: underline;
     }
   }
 }
 
-// Pizza loader styles remain the same
 .pizza-loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(45, 42, 38, 0.95);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,24 +357,40 @@
       height: 0;
       border-style: solid;
       border-width: 50px 30px 0;
-      border-color: #FFD700 transparent transparent;
+      border-color: var(--pizza-yellow) transparent transparent;
       left: 20px;
       top: 0;
       transform-origin: 50% 100%;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 
-      @for $i from 1 through 4 {
+      @for $i from 1 through 8 {
         &:nth-child(#{$i}) {
-          transform: rotate($i * 90deg);
+          transform: rotate($i * 45deg);
+          border-color: if($i % 2 == 0, var(--pizza-red), var(--pizza-yellow)) transparent transparent;
         }
       }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--pizza-brown);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
   .loading-text {
-    color: #ffffff;
+    color: white;
     margin-top: 1rem;
     font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
     animation: pulse 1.5s infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -256,12 +400,7 @@
 }
 
 @keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
-}
-
-@keyframes scroll {
-  from { background-position: 0 0; }
-  to { background-position: 100% 100%; }
+  0% { opacity: 0.6; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.6; transform: scale(0.98); }
 }

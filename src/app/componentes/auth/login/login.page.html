@@ -8,25 +8,28 @@
         <div class="slice"></div>
         <div class="slice"></div>
       </div>
-      <p class="loading-text">Preparando tu sesión...</p>
+      <p class="loading-text">Preparando el horno...</p>
     </div>
 
     <div class="content-card animate__animated animate__fadeIn">
       <div class="logo-container animate__animated animate__fadeInDown">
-        <i class="bi bi-shop logo-icon"></i>
-        <h1 class="brand-name">Pizzería Mako</h1>
+        <div class="logo-wrapper">
+          <i class="bi bi-shop logo-icon"></i>
+        </div>
+        <h1 class="brand-name">Pizzería <span>Mako</span></h1>
+        <div class="established">Desde el año del caldo</div>
       </div>
 
       <div class="messages animate__animated animate__fadeInUp">
-        <span class="text-title">¡Bienvenido de nuevo!</span>
-        <span class="text-sub">Tu deliciosa pizza está a solo un paso</span>
+        <span class="text-title">Bievenido!</span>
+        <span class="text-sub">La auténtica pizza italiana te espera</span>
       </div>
 
       <form [formGroup]="fgLogin" (ngSubmit)="login()" class="login">
         <div class="input-container">
           <input 
             type="text" 
-            placeholder="Nombre de usuario"  
+            placeholder="Tu nombre de usuario"  
             class="m-input"
             formControlName="name">
           <i class="bi bi-person input-icon"></i>
@@ -39,7 +42,7 @@
         <div class="input-container">
           <input 
             type="password" 
-            placeholder="Contraseña"  
+            placeholder="Tu contraseña"  
             class="m-input"
             formControlName="password">
           <i class="bi bi-lock input-icon"></i>
@@ -49,20 +52,20 @@
           </div>
         </div>
 
-        <a class="pass">¿Olvidaste tu contraseña?</a>
+        <a class="pass">¿Dimenticato la password?</a>
 
         <button 
           class="btn-login" 
           [disabled]="fgLogin.invalid"
           type="submit">
-          <span>Iniciar sesión</span>
+          <span>Acceder a mi cuenta</span>
           <i class="bi bi-arrow-right-circle btn-icon"></i>
         </button>
       </form>
 
       <div class="footer">
-        <span>¿No tienes cuenta? </span>
-        <a class="text-link">Regístrate aquí</a>
+        <span>¿Primera vez en nuestra pizzería? </span>
+        <a class="text-link">Crea tu cuenta aquí</a>
       </div>
     </div>
   </div>
