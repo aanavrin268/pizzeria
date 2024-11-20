@@ -3,84 +3,13 @@
   height:100%;
   padding: 1rem;
   padding-top: 40%;
-  background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+  //background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+  background-color: white;
   //justify-content: center;
   display: flex;
   gap: 1rem;
   flex-direction: column;
 
-  .messages{
-    display: flex;
-    flex-direction: column;
-    //background-color: rgb(245, 162, 162);
-    justify-content: center;
-    align-items: center;
-    width:100%;
-
-    .text-title{
-      font-weight: 600;
-      //background-color: blue;
-      font-size: 20px;
-    
-      
-    }
-
-    .text-sub{
-      margin-top: 10px;
-      line-height: 1.1;
-      font-size: 20px;
-      color: rgb(95, 95, 95);
-      //background-color: #d0d0d0;
-      width:45%;
-      text-align: center;
-    }
-
-  }
-
-  .login{
-
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      //background-color: yellow;
-
-    .m-input{
-      border-radius: 8px;
-      padding: 1rem 1.3rem;
-      border: 1px solid white;
-    }
   
-    .pass{
-      //background-color: red;
-      align-self: flex-end;
-    }
-  
-    .btn-login{
-      margin-top: 1rem;
-      background-color: orange;
-      color: white;
-      border-radius: 8px;
-      font-weight: 550;
-      font-size: 20px;
-      padding: 1.1rem 1.3rem;
-  
-    }
-  }
-
-  
-
-  .footer{
-    //background-color: green;
-    display: flex;
-    gap: .3rem;
-    margin-top: auto;
-    align-items: center;
-    justify-content: center;
-
-    .text-link{
-      color: blue;
-    }
-  }
- 
 
 }

@@ -13,17 +13,10 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonSkeletonText, 
 })
 export class HomePage {
 
-  protected fgLogin: FormGroup;
 
   constructor(private fBuilder: FormBuilder) {
-    this.fgLogin = fBuilder.group({
-      name: ["", Validators.required],
-      password: ["", Validators.required]
-
-    })
+   
   }
 
-  login(){
-    console.log("login!")
-  }
+ 
 }
