@@ -1,37 +1,50 @@
 <ion-content>
   <div class="main-container">
+    <div class="logo-container">
+  
+      <h1 class="brand-name">Pizzería Mako</h1>
+    </div>
+
     <div class="messages">
-      <span class="text-title">Hola de nuevo!</span>
-      <span class="text-sub"> Inicia sesión para empezar!</span>
+      <span class="text-title">¡Bienvenido de nuevo!</span>
+      <span class="text-sub">Tu deliciosa pizza está a solo un paso</span>
     </div>
-  <form [formGroup]="fgLogin" (ngSubmit)="login()">
-    <div class="login">
-      <input type="text" placeholder="Nombre de usuario"  class="m-input"
-        formControlName="name">
-    
 
-      <input type="password" placeholder="Contraseña"  class="m-input"
-        formControlName="password">
+    <form [formGroup]="fgLogin" (ngSubmit)="login()">
+      <div class="login">
+        <div class="input-container">
 
-      <span class="pass">Olvide mi contraseña</span>
+          <input 
+            type="text" 
+            placeholder="Nombre de usuario"  
+            class="m-input"
+            formControlName="name">
+        </div>
 
-      <button class="btn-login" [disabled]="fgLogin.invalid"
-        type="submit"
-      >Iniciar sesión</button>
-    </div>
-  </form>
-   
+        <div class="input-container">
 
-   
+          <input 
+            type="password" 
+            placeholder="Contraseña"  
+            class="m-input"
+            formControlName="password">
+        </div>
 
+        <span class="pass">¿Olvidaste tu contraseña?</span>
+
+        <button 
+          class="btn-login" 
+          [disabled]="fgLogin.invalid"
+          type="submit">
+          <span>Iniciar sesión</span>
+     
+        </button>
+      </div>
+    </form>
 
     <div class="footer">
-      <span>No tienes cuenta!</span>
-      <span class="text-link">Crear una</span>
-
+      <span>¿No tienes cuenta?</span>
+      <span class="text-link">Regístrate aquí</span>
     </div>
-
-  
-
   </div>
 </ion-content>
