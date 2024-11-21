@@ -1,13 +1,15 @@
-<div class="header">
-    <div class="left">
-      <div class="img-container">
+<div class="header p-0 m-0 col-12 row">
+    <div class="d-flex  justify-content-start align-items-center col-6 m-0 ">
+      <div class="img">
       </div>
       <span>Usuario</span>
     </div>
-    <div class="right">
-      <div class="icon-container" (click)="openModal()">
-        <i class="bi bi-cart"></i>
-        <ion-badge color="danger">118k</ion-badge>
+    <div class="col-6 m-0 d-flex justify-content-end" >
+      <div class="centrado-total">
+        <div class="icon-cart position-relative" (click)="openModal()">
+          <img src="assets/icon/cart-icon.png" alt="icon-cart">
+          <ion-badge color="danger">118k</ion-badge>
+        </div>
       </div>
     </div>
 </div>
