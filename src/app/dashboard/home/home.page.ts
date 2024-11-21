@@ -4,6 +4,8 @@ import { HeadersComponent } from "../shared/headers/headers.component";
 import { IonicModule } from "@ionic/angular";
 import {NgForOf} from "@angular/common";
 import {FooterComponent} from "../footer/footer.component";  // Asegúrate de importar IonicModule solo una vez
+import {CommonModule} from "@angular/common";  // Asegúrate de importar IonicModule solo una vez
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,18 +17,20 @@ import {FooterComponent} from "../footer/footer.component";  // Asegúrate de im
     HeadersComponent,
     FooterComponent,
     IonicModule,
-    NgForOf,
+    NgForOf, CommonModule
   ],
 })
 export class HomePage {
 
   protected list_paquetes: any;
+  protected list_top: any;
+  protected showNoti: boolean = false;
 
   public form = this.fBuilder.group({
     paquete: ['', Validators.required],
   });
 
-  constructor(private fBuilder: FormBuilder) {
+  constructor(private fBuilder: FormBuilder, private router: Router) {
     this.list_paquetes = [
       {title: "6 Rebanadas", text: "2x1 Chica", price: "215"},
       {title: "8 Rebanadas", text: "2x1 Mediana", price: "245"},
@@ -37,6 +41,28 @@ export class HomePage {
 
 
   ]
+
+  this.list_top = [
+    {title: "Hamburguesa", img: "assets/burguer.png"}, {title: "Pizza", img: "assets/pizza.png"}, {title: "Spaguetti",  img: "assets/espa.png"}
+    , {title: "Spaguetti",  img: "assets/espa.png"} , {title: "Spaguetti",  img: "assets/espa.png"}
+  ]
+  }
+
+
+
+  goToProduct(product: any){
+    this.router.navigate(["/product"]);
+
+  }
+
+
+  addPaquete(paquete: any){
+      this.showNoti = !this.showNoti;
+
+      setTimeout(() => {
+        this.showNoti = !this.showNoti;
+
+      }, 2000);
   }
 
   onSubmit() {
