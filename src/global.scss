@@ -27,14 +27,12 @@
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-//@import '@ionic/angular/css/palettes/dark.system.css';
+/* src/styles.scss o src/global.scss */
+:root {
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --primary-color: #ff416c;
+  --secondary-color: #ff4b2b;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}

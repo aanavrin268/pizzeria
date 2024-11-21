@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {IonicModule, IonModal, ModalController} from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { FormsModule } from '@angular/forms';
@@ -16,9 +16,8 @@ import { FormsModule } from '@angular/forms';
 export class ShoppingCartComponent  {
 
   @ViewChild(IonModal) modal: IonModal | any;
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+  @Input() number: any;
   protected name: string = '';
-
   constructor(private modalController: ModalController) { }
 
   cancel() {
@@ -34,7 +33,7 @@ export class ShoppingCartComponent  {
   onWillDismiss(event: Event) {
     const ev = event as CustomEvent<OverlayEventDetail<string>>;
     if (ev.detail.role === 'confirm') {
-      this.message = `Hello, ${ev.detail.data}!`;
+      this.number = `Hello, ${ev.detail.data}!`;
     }
   }
 }

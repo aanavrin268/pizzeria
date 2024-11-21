@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeadersComponent } from "../shared/headers/headers.component";
 import { IonicModule } from "@ionic/angular";
-import {NgForOf} from "@angular/common";  // Asegúrate de importar IonicModule solo una vez
+import {NgForOf} from "@angular/common";
+import {FooterComponent} from "../footer/footer.component";  // Asegúrate de importar IonicModule solo una vez
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import {NgForOf} from "@angular/common";  // Asegúrate de importar IonicModule 
   imports: [
     ReactiveFormsModule,
     HeadersComponent,
+    FooterComponent,
     IonicModule,
     NgForOf,
   ],

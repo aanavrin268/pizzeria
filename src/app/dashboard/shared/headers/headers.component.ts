@@ -16,6 +16,9 @@ export class HeadersComponent   {
   async openModal() {
     const modal = await this.modalController.create({
       component: ShoppingCartComponent,
+      componentProps: {
+        number: 8
+      },
     });
     modal.onWillDismiss().then((data) => {
       console.log('Modal dismissed with data:', data);

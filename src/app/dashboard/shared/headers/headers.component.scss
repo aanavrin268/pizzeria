@@ -1,25 +1,19 @@
 .header{
-    background-color: blue;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
     width:100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-
+    height: 15vh;
     .left{
-       // background-color: red;
         padding: .5rem;
         width:50%;
-        height:10%;
+        height:100%;
+       background: red;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         gap: .5rem;
-
         span{
             color: white;
         }
-
-
         .img-container{
             width: 45px;
             height: 45px;
@@ -29,24 +23,32 @@
     }
 
     .right{
-        //background-color: green;
-        padding: .5rem;
         padding: .5rem;
         width:50%;
         height:10%;
         display: flex;
         justify-content: flex-end;
-
         .icon-container{
                 display: flex;
                 justify-content:flex-end ;
                 padding-right: .5rem;
                 align-items: center;
-                //background-color: gray;
             i{
                 color: white;
                 font-size: 25px;
             }
         }
     }
+}
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+ion-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+  padding: 4px 6px;
 }
