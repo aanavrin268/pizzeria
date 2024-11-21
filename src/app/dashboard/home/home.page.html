@@ -23,7 +23,7 @@
         </div>
 
         <div class="top-container">
-          <div class="top" *ngFor="let top of list_top">
+          <div class="top" *ngFor="let top of list_top" (click)="goToProduct(top)">
             <img src="{{top.img}}" alt="">
               <span>{{ top.title }}</span>
           </div>
