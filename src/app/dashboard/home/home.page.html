@@ -16,7 +16,7 @@
             (click)="addPaquete(item)">
 
             <div class="paquete-over" *ngIf="item.id === selectedId">
-              <button class="over-btn">Agregar</button>
+              <button class="over-btn" (click)="addNewItem(item)">Agregar</button>
           </div>
 
 
@@ -44,8 +44,11 @@
 
         <div class="top-container">
           <div class="top" *ngFor="let top of list_top" (click)="goToProduct(top)">
-            <img src="{{top.img}}" alt="">
-              <span>{{ top.title }}</span>
+            <div class="img-container">
+              <img src="{{top.img}}" alt="">
+
+            </div>
+              <span class="text-top">{{ top.title }}</span>
           </div>
         </div>
 

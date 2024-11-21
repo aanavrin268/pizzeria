@@ -27,6 +27,9 @@ export class HomePage {
   protected showNoti: boolean = false;
   protected showOverlay: boolean = false;
 
+
+  protected list_cart:any;
+
   selectedId: number | null = null;
 
   public form = this.fBuilder.group({
@@ -46,9 +49,14 @@ export class HomePage {
   ]
 
   this.list_top = [
-    {title: "Hamburguesa", img: "assets/burguer.png"}, {title: "Pizza", img: "assets/pizza.png"}, {title: "Spaguetti",  img: "assets/espa.png"}
-    , {title: "Spaguetti",  img: "assets/espa.png"} , {title: "Spaguetti",  img: "assets/espa.png"}
+    {title: "Hamburguesa", img: "assets/burguer1.png"}, {title: "Pizza", img: "assets/pizza3.png"}, {title: "Spaguetti",  img: "assets/espa1.png"}
+    , {title: "Spaguetti",  img: "assets/espa1.png"} , {title: "Spaguetti",  img: "assets/espa1.png"}
   ]
+  }
+
+
+  addNewItem(produc:any){
+  
   }
 
 

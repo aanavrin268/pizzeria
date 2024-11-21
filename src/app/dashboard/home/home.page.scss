@@ -56,6 +56,7 @@
       .paquete{
         width:80%;
         position: relative;
+        border: 1px solid rgb(238, 238, 224);
 
         background-color: rgb(255, 255, 255);
         //padding: 1.1rem 1.2rem;
@@ -94,7 +95,7 @@
         .h-container{
           display: flex;
           width:100%;
-          background-color: aquamarine;
+         // background-color: aquamarine;
           position: relative;
 
           .left{
@@ -161,7 +162,7 @@
 
     .top-container{
       width:100%;
-      background-color: gray;
+      //background-color: gray;
       padding: 1rem;
       gap: 1.5rem;
       display: -webkit-inline-box;
@@ -172,10 +173,24 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: .6rem;
         width:40% ;
-        background-color: white;
-        border-radius: 16px;
+
+
+        .img-container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 1.2rem .3rem;
+          background-color: rgb(238, 238, 224);
+          border-radius: 16px;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.197);
+  
+        }
+
+        .text-top{
+          margin-top: .5rem;
+        }
       }
     }
 
