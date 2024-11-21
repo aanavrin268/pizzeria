@@ -6,17 +6,29 @@
         <span>Paquetes</span>
 
         <div class="contenedor">
+
+          
+        
           <div class="paquete" *ngFor="let item of list_paquetes"
+
+          
+            
             (click)="addPaquete(item)">
-            <div class="h-container">
+
+            <div class="paquete-over" *ngIf="item.id === selectedId">
+              <button class="over-btn">Agregar</button>
+          </div>
+
+
+            <div class="h-container" [ngClass]="{'overlay-black': item.id === selectedId}">
               <div class="left">
-                <span>{{item.title}}</span>
-            <span>{{item.text}}</span>
-            <span>{{item.price}}</span>
+                <span class="item-title">{{item.title}}</span>
+            <span class="item-sub">{{item.text}}</span>
+            <span class="item-price">${{item.price}}.00</span>
               </div>
 
               <div class="right">
-                <img src="assets/paquete1.png" alt="">
+                <img src="{{item.image}}" alt="">
 
               </div>
             </div>
@@ -24,6 +36,7 @@
 
           </div>
 
+        
 
 
 

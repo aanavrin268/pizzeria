@@ -51,8 +51,12 @@
       overflow-x: auto;
       gap: 1.5rem;
 
+
+
       .paquete{
         width:80%;
+        position: relative;
+
         background-color: rgb(255, 255, 255);
         //padding: 1.1rem 1.2rem;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.308);
@@ -60,6 +64,32 @@
         overflow: hidden;
         flex-direction: column;
         border-radius: 16px;
+
+        
+      .paquete-over{
+        z-index: 1000;
+        position: absolute;
+        //background-color: rgba(255, 255, 255, 0.29);
+        width: 60%;
+        transform: translateX(30%) translateY(50%);
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .over-btn{
+          padding: .6rem .8rem;
+          border-radius: 8px;
+          background-color: transparent;
+          color: white;
+          border: 1px solid white;
+
+          &:hover{
+            background-color: rgba(255, 255, 255, 0.264);
+          }
+        }
+      }
+
 
         .h-container{
           display: flex;
@@ -72,8 +102,31 @@
             flex-direction: column;
             display: flex;
             padding: .5rem;
+            transform: translateY(30%);
             //background-color: rgba(0, 0, 0, 0.29);
             position: absolute;
+
+
+            .item-title{
+              background-color: rgba(0, 0, 0, 0.845);
+              color: aquamarine;
+              width: fit-content;
+              padding: .4rem .6rem;
+              border-radius: 8px;
+              
+            }
+
+            .item-sub{
+              margin-top: 5px;
+              color: black;
+              margin-left: 8px;
+            }
+
+            .item-price{
+              color: black;
+              margin-left: 8px;
+            }   
+
           }
 
           .right{
@@ -93,6 +146,17 @@
         }
 
       }
+
+      
+      .overlay-black{
+       
+        filter:  brightness(.3);
+       
+       
+      }
+
+      
+
     }
 
     .top-container{

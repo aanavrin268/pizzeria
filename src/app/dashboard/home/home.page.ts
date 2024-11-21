@@ -25,6 +25,9 @@ export class HomePage {
   protected list_paquetes: any;
   protected list_top: any;
   protected showNoti: boolean = false;
+  protected showOverlay: boolean = false;
+
+  selectedId: number | null = null;
 
   public form = this.fBuilder.group({
     paquete: ['', Validators.required],
@@ -32,11 +35,11 @@ export class HomePage {
 
   constructor(private fBuilder: FormBuilder, private router: Router) {
     this.list_paquetes = [
-      {title: "Paquete 1", text: "2x1 Chica", price: "215", image: "assets/paquete1.png"},
-      {title: "8 Rebanadas", text: "2x1 Mediana", price: "245"},
-      {title: "12 Rebanadas", text: "2x1 Grande", price: "285"},
-      {title: "16 Rebanadas", text: "2x1 Familiar", price: "330"},
-      {title: "22 Cuadros", text: "2x1 Mega", price: "399"},
+      {id: 1, title: "Paquete 1", text: "2x1 Chica", price: "215", image: "assets/paquete1.png"},
+      {id:2, title: "8 Rebanadas", text: "2x1 Mediana", price: "245",  image: "assets/paquete2.png"},
+      {id:3, title: "12 Rebanadas", text: "2x1 Grande", price: "285", image: "assets/paquete1.png"},
+      {id:4, title: "16 Rebanadas", text: "2x1 Familiar", price: "330", image: "assets/paquete2.png"},
+      {id:5, title: "22 Cuadros", text: "2x1 Mega", price: "399", image: "assets/paquete5.png"},
 
 
 
@@ -57,12 +60,19 @@ export class HomePage {
 
 
   addPaquete(paquete: any){
-      this.showNoti = !this.showNoti;
 
+      this.showOverlay = !this.showOverlay;
+      this.selectedId = paquete.id;
+
+     // this.showNoti = !this.showNoti;
+
+     /*
       setTimeout(() => {
         this.showNoti = !this.showNoti;
 
       }, 2000);
+
+      */
   }
 
   onSubmit() {
