@@ -10,13 +10,8 @@ export const routes: Routes = [
     loadComponent: () => import('./componentes/auth/login/login.page').then((m) => m.LoginPage)
   },
   {
-    path: "product", 
+    path: "product",
     loadComponent: () => import('./dashboard/product/product.page').then((m) => m.ProductPage)
-  },
-  {
-    path: '**',
-    redirectTo: 'login',
-    pathMatch: 'full',
   },
   {
     path: 'login',
@@ -26,5 +21,15 @@ export const routes: Routes = [
     path: 'product',
     loadComponent: () => import('./dashboard/product/product.page').then( m => m.ProductPage)
   },
+  {
+    path: 'shoping',
+    loadComponent: () => import('./dashboard/shoping-cart/shoping-cart.page').then( m => m.ShopingCartPage)
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  }
+
 
 ];

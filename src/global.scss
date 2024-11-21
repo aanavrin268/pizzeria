@@ -53,3 +53,17 @@
     linear-gradient(45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%),
     linear-gradient(-45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%);
 }
+.boton-transparente {
+  --background: transparent;
+  --border-color: transparent;
+  --box-shadow: none;
+  --color: #000;
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.boton-transparente:focus {
+  outline: none;
+}

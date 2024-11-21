@@ -3,7 +3,7 @@
   height: 13vh;
   position: relative;
   padding-bottom: 10px;
-  &::after{
+  &::before{
       content: "";
       position: absolute;
       bottom: 0;
@@ -25,24 +25,30 @@
     max-width: 15vw;
     min-height: 8vh;
     max-height: 8vh;
-    background: #2d3436;
+    background: transparent;
     border-radius: 50%;
     margin-right: 3vw;
   }
   .icon-cart{
-    width: 13vw;
+    width: 18vw;
     height: 7vh;
+    background: transparent;
   }
   .icon-cart img{
-    width: 9vw;
-    height: 6vh;
+    width: 15vw;
+    height: 5vh;
   }
 }
 
-ion-badge {
+.boton-transparente img {
+  max-width: 100%;
+  height: auto;
+}
+
+.boton-transparente ion-badge {
   position: absolute;
-  top: -10px;
-  right: -5px;
-  font-size: 12px;
+  top: -15px;
+  right: -9px;
+  font-size: 10px;
   padding: 4px 6px;
 }

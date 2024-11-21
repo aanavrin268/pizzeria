@@ -71,3 +71,7 @@ Thumbs.db
 
 package-lock.json
 .browserslistrc
+android
+android/
+www
+www/

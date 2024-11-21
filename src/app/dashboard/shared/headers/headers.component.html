@@ -1,21 +1,16 @@
-<div class="header p-0 m-0 col-12 row">
+<div class="header p-0 m-0 col-12 row"  >
     <div class="d-flex  justify-content-start align-items-center col-6 m-0 ">
       <div class="img">
+        <img src="assets/icon/profile.png" alt="profile">
       </div>
       <span>Usuario</span>
     </div>
     <div class="col-6 m-0 d-flex justify-content-end" >
       <div class="centrado-total">
-        <div class="icon-cart position-relative" (click)="openModal()">
+        <ion-button class="icon-cart position-relative boton-transparente" (click)="showcart()">
           <img src="assets/icon/cart-icon.png" alt="icon-cart">
           <ion-badge color="danger">118k</ion-badge>
-        </div>
+        </ion-button>
       </div>
     </div>
 </div>
-
-<ion-modal #modal>
-  <ng-template>
-    <app-shopping-cart></app-shopping-cart>
-  </ng-template>
-</ion-modal>
