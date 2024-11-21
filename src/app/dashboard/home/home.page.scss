@@ -1,27 +1,15 @@
-.header{
-  width:100%;
-  height: 10%;
-}
-
-
 
 .main-container{
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:70vh;
   padding: 1rem;
- 
-  //background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
   background-color: white;
-  //justify-content: center;
   display: flex;
   gap: 1rem;
   flex-direction: column;
-
   .text-order{
     align-self: flex-end;
   }
-
-  
     .d-flex {
       display: flex;
       overflow-x: auto;
@@ -49,7 +37,7 @@
         }
       }
 
-    
+
     }
 
 
@@ -136,7 +124,7 @@
       padding: 1rem;
     }
 
-   
+
 
 }
 

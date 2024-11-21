@@ -27,14 +27,29 @@
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* src/styles.scss o src/global.scss */
+:root {
+  --pizza-red: #D73C2C;
+  --pizza-dark-red: #B32B1B;
+  --pizza-green: #347A3C;
+  --pizza-yellow: #FFA41B;
+  --pizza-beige: #FFF8E7;
+  --pizza-brown: #8B4513;
+  --text-color: #2D2A26;
+}
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+.centrado-total{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-//@import '@ionic/angular/css/palettes/dark.system.css';
+.mantel{
+  background-color: var(--pizza-beige);
+  /* Patrón de cuadrícula estilo mantel de pizzería */
+  background-image:
+    linear-gradient(45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%);
+}

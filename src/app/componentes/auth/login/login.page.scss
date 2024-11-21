@@ -1,22 +1,5 @@
-:host {
-  --pizza-red: #D73C2C;
-  --pizza-dark-red: #B32B1B;
-  --pizza-green: #347A3C;
-  --pizza-yellow: #FFA41B;
-  --pizza-beige: #FFF8E7;
-  --pizza-brown: #8B4513;
-  --text-color: #2D2A26;
-}
-
 .main-container {
   min-height: 100%;
-  background-color: var(--pizza-beige);
-  /* Patrón de cuadrícula estilo mantel de pizzería */
-  background-image: 
-    linear-gradient(45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(215, 60, 44, 0.05) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(215, 60, 44, 0.05) 75%);
   background-size: 20px 20px;
   padding: 1.5rem;
   display: flex;
@@ -55,10 +38,10 @@
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, 
-      var(--pizza-red) 33%, 
-      var(--pizza-green) 33%, 
-      var(--pizza-green) 66%, 
+    background: linear-gradient(90deg,
+      var(--pizza-red) 33%,
+      var(--pizza-green) 33%,
+      var(--pizza-green) 66%,
       var(--pizza-yellow) 66%
     );
   }
@@ -85,7 +68,7 @@
 .logo-container {
   text-align: center;
   margin-bottom: 2rem;
-  
+
   .logo-wrapper {
     background: var(--pizza-red);
     width: 90px;
@@ -98,14 +81,14 @@
     box-shadow: 0 4px 12px rgba(215, 60, 44, 0.3);
     border: 3px solid white;
     transform: rotate(-5deg);
-    
+
     .logo-icon {
       font-size: 2.75rem;
       color: white;
       filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
   }
-  
+
   .brand-name {
     color: var(--text-color);
     font-size: 2rem;
@@ -113,7 +96,7 @@
     font-family: 'Playfair Display', serif;
     margin: 0;
     text-shadow: 2px 2px 0 rgba(215, 60, 44, 0.1);
-    
+
     span {
       color: var(--pizza-red);
       font-style: italic;
@@ -129,7 +112,7 @@
     letter-spacing: 1px;
     position: relative;
     display: inline-block;
-    
+
     &::before, &::after {
       content: '•';
       color: var(--pizza-yellow);
@@ -144,7 +127,7 @@
   background: rgba(255, 248, 231, 0.5);
   padding: 1rem;
   border-radius: 12px;
-  
+
   .text-title {
     display: block;
     color: var(--text-color);
@@ -161,17 +144,17 @@
     font-size: 0.875rem;
     position: relative;
     padding: 0 1.5rem;
-    
+
     &::before, &::after {
       content: '🍕';
       position: absolute;
       font-size: 1rem;
     }
-    
+
     &::before {
       left: 0;
     }
-    
+
     &::after {
       right: 0;
     }
@@ -244,7 +227,7 @@
     margin-bottom: 1.5rem;
     text-decoration: none;
     font-style: italic;
-    
+
     &:hover {
       text-decoration: underline;
       color: var(--pizza-dark-red);
@@ -311,14 +294,14 @@
   border-top: 2px dashed rgba(139, 69, 19, 0.1);
   color: var(--pizza-brown);
   font-size: 0.875rem;
-  
+
   .text-link {
     color: var(--pizza-red);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
     &:hover {
       color: var(--pizza-dark-red);
       text-decoration: underline;

@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="main-container">
+  <div class="main-container mantel">
     <!-- Loader -->
     <div class="pizza-loader" [ngClass]="{'hide': !loading}">
       <div class="pizza">
@@ -27,9 +27,9 @@
 
       <form [formGroup]="fgLogin" (ngSubmit)="login()" class="login">
         <div class="input-container">
-          <input 
-            type="text" 
-            placeholder="Tu nombre de usuario"  
+          <input
+            type="text"
+            placeholder="Tu nombre de usuario"
             class="m-input"
             formControlName="name">
           <i class="bi bi-person input-icon"></i>
@@ -40,9 +40,9 @@
         </div>
 
         <div class="input-container">
-          <input 
-            type="password" 
-            placeholder="Tu contraseña"  
+          <input
+            type="password"
+            placeholder="Tu contraseña"
             class="m-input"
             formControlName="password">
           <i class="bi bi-lock input-icon"></i>
@@ -54,8 +54,8 @@
 
         <a class="pass">¿Dimenticato la password?</a>
 
-        <button 
-          class="btn-login" 
+        <button
+          class="btn-login"
           [disabled]="fgLogin.invalid"
           type="submit">
           <span>Acceder a mi cuenta</span>

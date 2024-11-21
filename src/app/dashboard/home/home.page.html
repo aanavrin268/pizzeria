@@ -1,9 +1,6 @@
 <ion-content>
-  <div class="header">
-    <app-headers></app-headers>
-  </div>
-
-    <div class="main-container">
+    <app-headers class="m-0 p-0 col-12"></app-headers>
+    <div class="main-container  m-0">
         <span class="text-order">Orden #100</span>
 
         <span>Paquetes</span>
@@ -27,9 +24,9 @@
 
           </div>
 
-       
 
-         
+
+
         </div>
 
         <div class="top-container">
@@ -43,8 +40,7 @@
         <div class="message-container" *ngIf="showNoti">
           <span>Paquete # agregado!</span>
         </div>
-        
-    </div>
 
-  
+    </div>
+  <app-footer class="m-0 p-0"></app-footer>
 </ion-content>
