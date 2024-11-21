@@ -29,7 +29,7 @@ export class HomePage {
 
   constructor(private fBuilder: FormBuilder, private router: Router) {
     this.list_paquetes = [
-      {title: "6 Rebanadas", text: "2x1 Chica", price: "215"},
+      {title: "Paquete 1", text: "2x1 Chica", price: "215", image: "assets/paquete1.png"},
       {title: "8 Rebanadas", text: "2x1 Mediana", price: "245"},
       {title: "12 Rebanadas", text: "2x1 Grande", price: "285"},
       {title: "16 Rebanadas", text: "2x1 Familiar", price: "330"},

@@ -66,11 +66,38 @@
       .paquete{
         width:80%;
         background-color: rgb(255, 255, 255);
-        padding: 1.1rem 1.2rem;
+        //padding: 1.1rem 1.2rem;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.308);
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         border-radius: 16px;
+
+        .h-container{
+          display: flex;
+          width:100%;
+          background-color: aquamarine;
+          position: relative;
+
+          .left{
+            width:100%;
+            flex-direction: column;
+            display: flex;
+            padding: .5rem;
+            //background-color: rgba(0, 0, 0, 0.29);
+            position: absolute;
+          }
+
+          .right{
+            width:100%;
+            padding: .5rem;
+            background-color: primary;
+
+            img{
+              transform: translateX(50%);
+            }
+          }
+        }
 
         &:hover{
             cursor: pointer;

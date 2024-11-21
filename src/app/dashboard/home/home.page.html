@@ -11,9 +11,19 @@
         <div class="contenedor">
           <div class="paquete" *ngFor="let item of list_paquetes"
             (click)="addPaquete(item)">
-            <span>{{item.title}}</span>
+            <div class="h-container">
+              <div class="left">
+                <span>{{item.title}}</span>
             <span>{{item.text}}</span>
             <span>{{item.price}}</span>
+              </div>
+
+              <div class="right">
+                <img src="assets/paquete1.png" alt="">
+
+              </div>
+            </div>
+            
 
           </div>
 
