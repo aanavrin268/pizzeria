@@ -1,8 +1,10 @@
 .redondo{
-  min-height: 17vh;
+  min-height: 10vh;
   min-width: 100vw;
   position: absolute;
-  clip-path: ellipse(60% 98% at 50% 100%);
+  opacity: .8;
+  clip-path: ellipse(55% 98% at 50% 100%);
+  top:90vh;
   &::after{
       content: "";
       position: absolute;
