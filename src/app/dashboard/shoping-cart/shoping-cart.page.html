@@ -10,4 +10,52 @@
       <ion-title size="large">shopingCart</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="main-content">
+
+    <div class="list-container">
+      <div class="item" *ngFor="let item of list_cart">
+        <div class="top">
+          <div class="img-container">
+            <img src="{{item.image}}" alt="" class="timage">
+  
+          </div>
+          <div class="name-price">
+            
+          </div>
+          <span class="name">
+            {{item.name}}
+          </span>
+          <span class="cantidad">
+            {{item.price}}
+          </span>
+        </div>
+
+        <div class="bottom">
+          <i class="bi bi-trash"></i>
+          <div class="buttons">
+              <button (click)="removeItem(item)">-</button>
+              <span>{{item.cuantity}}</span>
+              <button (click)="addItem(item)">+</button>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+
+
+    <div class="payment-details">
+      <span>Subtotal:</span>
+      <span>{{subTotal}}</span>
+    </div>
+
+    
+    
+
+  </div>
+
+
+
+
 </ion-content>
