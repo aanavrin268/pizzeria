@@ -6,19 +6,11 @@
         <span>Paquetes</span>
 
         <div class="contenedor">
-
-          
-        
           <div class="paquete" *ngFor="let item of list_paquetes"
-
-          
-            
             (click)="addPaquete(item)">
-
             <div class="paquete-over" *ngIf="item.id === selectedId">
               <button class="over-btn" (click)="addNewItem(item)">Agregar</button>
           </div>
-
 
             <div class="h-container" [ngClass]="{'overlay-black': item.id === selectedId}">
               <div class="left">
@@ -32,11 +24,11 @@
 
               </div>
             </div>
-            
+
 
           </div>
 
-        
+
 
 
 
