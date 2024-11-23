@@ -20,6 +20,8 @@ export class ShopingCartPage implements OnInit {
   ];
 
   protected subTotal: number = 0;
+  protected envio: number = 20;
+  protected total: number = 0;
 
   constructor(private cartService: CartService) {
 
@@ -31,6 +33,9 @@ export class ShopingCartPage implements OnInit {
   ngOnInit() {
 
     this.subTotal = this.list_cart.reduce((total, prodcuto) => total + prodcuto.sub, 0);
+
+    this.total = this.subTotal + this.envio;
+
 
     /*
     this.cartService.cart$.subscribe(cart => {
@@ -60,6 +65,8 @@ export class ShopingCartPage implements OnInit {
     this.subTotal = this.list_cart.reduce((total, prodcuto) => total + prodcuto.sub, 0);
 
 
+    this.total = this.subTotal + this.envio;
+
   }
 
 
@@ -78,6 +85,7 @@ export class ShopingCartPage implements OnInit {
 
       this.subTotal = this.list_cart.reduce((total, prodcuto) => total + prodcuto.sub, 0);
 
+      this.total = this.subTotal + this.envio;
 
     }
 
