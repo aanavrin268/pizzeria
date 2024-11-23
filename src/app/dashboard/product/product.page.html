@@ -1,13 +1,126 @@
-<ion-header [translucent]="true">
+<ion-header class="product-header">
   <ion-toolbar>
-    <ion-title>product</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="favorite-btn" [class.active]="isFavorite" (click)="toggleFavorite()">
+        <i class="bi" [class.bi-heart-fill]="isFavorite" [class.bi-heart]="!isFavorite"></i>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <div class="product-container">
+    <!-- Imagen del producto -->
+    <div class="product-image-container">
+      <ion-slides [options]="slideOpts" #slides>
+        <ion-slide *ngFor="let image of productImages">
+          <img [src]="image" alt="Pizza" class="product-image"/>
+        </ion-slide>
+      </ion-slides>
+      <div class="discount-badge" *ngIf="discount > 0">-{{discount}}%</div>
+    </div>
+
+    <!-- Quick Info -->
+    <div class="quick-info">
+      <div class="info-item">
+        <i class="bi bi-clock"></i>
+        <span class="label">Tiempo</span>
+        <span class="value">{{deliveryTime}}</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-fire"></i>
+        <span class="label">Calorías</span>
+        <span class="value">{{calories}} kcal</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-star"></i>
+        <span class="label">Rating</span>
+        <span class="value">{{rating}}/5.0</span>
+      </div>
+    </div>
+
+    <!-- Información del producto -->
+    <div class="product-info">
+      <h1 class="product-title">{{productName}}</h1>
+      <div class="product-rating">
+        <ng-container *ngFor="let star of ratingStars">
+          <i class="bi" [class.bi-star-fill]="star === 'full'" 
+             [class.bi-star-half]="star === 'half'"
+             [class.bi-star]="star === 'empty'"></i>
+        </ng-container>
+        <span class="rating-count">({{reviewCount}} reseñas)</span>
+      </div>
+
+      <div class="product-price">
+        <span class="current-price">{{currentPrice | currency:'MXN':'symbol-narrow':'1.2-2'}}</span>
+        <span class="original-price" *ngIf="discount > 0">{{originalPrice | currency:'MXN':'symbol-narrow':'1.2-2'}}</span>
+        <span class="discount-percentage" *ngIf="discount > 0">-{{discount}}%</span>
+      </div>
+
+      <!-- Selector de tamaño -->
+      <div class="size-selector">
+        <div class="section-header">
+          <h3>Selecciona el tamaño</h3>
+          <span class="size-info">{{selectedSize.slices}} rebanadas</span>
+        </div>
+        <div class="size-options">
+          <button *ngFor="let size of sizes" 
+                  class="size-option" 
+                  [class.active]="size.id === selectedSize.id"
+                  (click)="selectSize(size)">
+            <i class="bi bi-circle-fill"></i>
+            <span class="size-name">{{size.name}}</span>
+            <span class="size-detail">{{size.diameter}} cm</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Ingredientes -->
+      <div class="ingredients">
+        <div class="section-header">
+          <h3>Ingredientes</h3>
+          <ion-button fill="clear" size="small" (click)="showIngredientsInfo()">
+            <i class="bi bi-info-circle"></i>
+          </ion-button>
+        </div>
+        <div class="ingredients-grid">
+          <div class="ingredient-item" *ngFor="let ingredient of ingredients">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ingredient.name}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contador -->
+      <div class="quantity-selector">
+        <button class="quantity-btn" (click)="decreaseQuantity()" [disabled]="quantity <= 1">
+          <i class="bi bi-dash"></i>
+        </button>
+        <span class="quantity">{{quantity}}</span>
+        <button class="quantity-btn" (click)="increaseQuantity()" [disabled]="quantity >= 10">
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer con total y botón de agregar -->
+  <ion-footer class="product-footer">
     <ion-toolbar>
-      <ion-title size="large">product</ion-title>
+      <div class="add-to-cart">
+        <div class="price-summary">
+          <span class="total-label">Total:</span>
+          <span class="total-price">{{getTotalPrice() | currency:'MXN':'symbol-narrow':'1.2-2'}}</span>
+        </div>
+        <ion-button expand="block" class="add-button" (click)="addToCart()">
+          <i class="bi bi-cart-plus"></i>
+          Agregar al carrito
+        </ion-button>
+      </div>
     </ion-toolbar>
-  </ion-header>
+  </ion-footer>
 </ion-content>
