@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 import {FormsModule} from "@angular/forms";
 import {NgClass} from "@angular/common";
@@ -11,11 +11,24 @@ import {Router, RouterLink} from "@angular/router";
   standalone: true,
   imports: [IonicModule, FormsModule, NgClass, RouterLink]
 })
-export class HeadersComponent   {
+export class HeadersComponent implements OnInit   {
+  @Input() cart: any[] = [];
 
-  constructor(private router: Router) { }
+
+
+  constructor(private router: Router) {
+
+    
+   }
+
+
+  ngOnInit(): void {
+      console.log("en header", this.cart);
+  }
 
   showcart(){
-    this.router.navigate(["/shoping"]);
+    this.router.navigate(["/shoping"], {
+      state: {cart: this.cart}
+    });
   }
 }
