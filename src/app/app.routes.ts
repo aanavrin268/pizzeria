@@ -26,6 +26,11 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/shoping-cart/shoping-cart.page').then( m => m.ShopingCartPage)
   },
   {
+    path: 'tabs',
+    loadComponent: () => import('./dashboard/tabs/tabs.page').then( m => m.TabsPage)
+  },
+
+  {
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full',

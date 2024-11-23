@@ -27,21 +27,18 @@ export class HomePage implements OnInit {
   protected list_top: any;
   protected showNoti: boolean = false;
   protected showOverlay: boolean = false;
-
-
   protected list_cart:any[] = [];
-
   selectedId: number | null = null;
 
   public form = this.fBuilder.group({
     paquete: ['', Validators.required],
   });
 
-  constructor(private fBuilder: FormBuilder, private router: Router, 
+  constructor(private fBuilder: FormBuilder, private router: Router,
     private cartService: CartService
   ) {
     this.list_paquetes = [
-      {id: 1, title: "Paquete 1", text: "2x1 Chica", price: "215", image: "assets/paquete1.png"},
+      {id: 1, title: "6 Rebanadas", text: "2x1 Chica", price: "215", image: "assets/paquete1.png"},
       {id:2, title: "8 Rebanadas", text: "2x1 Mediana", price: "245",  image: "assets/paquete2.png"},
       {id:3, title: "12 Rebanadas", text: "2x1 Grande", price: "285", image: "assets/paquete1.png"},
       {id:4, title: "16 Rebanadas", text: "2x1 Familiar", price: "330", image: "assets/paquete2.png"},

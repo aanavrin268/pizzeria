@@ -1,37 +1,29 @@
-<ion-content>
+<div class="">
     <app-headers [cart]="list_cart" class="m-0 p-0 col-12"></app-headers>
     <div class="main-container  m-0">
-        <span class="text-order">Orden #100</span>
-
-        <span>Paquetes</span>
-
+        <span class="text-order fw-bold text-muted">Orden #100</span>
+        <span class="brand-name">Paquetes</span>
         <div class="contenedor">
-          <div class="paquete" *ngFor="let item of list_paquetes"
-            (click)="addPaquete(item)">
-            <div class="paquete-over" *ngIf="item.id === selectedId">
-              <button class="over-btn" (click)="addNewItem(item)">Agregar</button>
-          </div>
-
-            <div class="h-container" [ngClass]="{'overlay-black': item.id === selectedId}">
-              <div class="left">
-                <span class="item-title">{{item.title}}</span>
-            <span class="item-sub">{{item.text}}</span>
-            <span class="item-price">${{item.price}}.00</span>
-              </div>
-
-              <div class="right">
-                <img src="{{item.image}}" alt="">
-
+          <div class="paquete" *ngFor="let item of list_paquetes" (click)="addPaquete(item)">
+            <div class="col-12 cnt-paquete" *ngIf="item.id === selectedId">
+              <div class="paquete-over" >
+                <button class="over-btn" (click)="addNewItem(item)">
+                  <i class="fas fa-plus-circle"></i> <!-- Ícono de agregar -->
+                  Agregar
+                </button>
               </div>
             </div>
-
-
+            <div class="h-container" [ngClass]="{'overlay-black': item.id === selectedId}">
+              <div class="left brand-name">
+                <span class="item-title">{{item.title}}</span>
+                <span class="item-sub">{{item.text}}</span>
+                <span class="item-price">${{item.price}}.00</span>
+              </div>
+              <div class="right">
+                <img src="{{item.image}}" alt="">
+              </div>
+            </div>
           </div>
-
-
-
-
-
         </div>
 
         <div class="top-container">
@@ -50,5 +42,5 @@
         </div>
 
     </div>
-  <app-footer class="m-0 p-0"></app-footer>
-</ion-content>
+  <!--<app-footer class="m-0 p-0"></app-footer>-->
+</div>
