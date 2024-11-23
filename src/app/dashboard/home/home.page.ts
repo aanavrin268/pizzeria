@@ -75,7 +75,9 @@ export class HomePage implements OnInit {
 
 
   goToProduct(product: any){
-    this.router.navigate(["/product"]);
+    this.router.navigate(["/product"], 
+      {state: { product} }
+    );
 
   }
 

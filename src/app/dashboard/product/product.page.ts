@@ -12,9 +12,13 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class ProductPage implements OnInit {
 
-  constructor() { }
+  product: any;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit(): void {
+    this.product = history.state.product;
+    console.log(this.product); 
   }
 
 }
