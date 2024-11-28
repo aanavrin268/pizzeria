@@ -1,0 +1,38 @@
+<ion-content>
+  
+  <div class="main">
+
+    <div class="header">
+      <span>Inventario</span>
+    </div>
+
+    <div class="body">
+      <div class="input-container">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Busca algo acá...." #inputSearch
+          (change)="filter()">
+        <div class="line-v"></div>
+        <i class="bi bi-filter blue"></i>
+      </div>
+
+      <span class="text-semi">Categorias</span>
+
+      <div class="cat-container">
+
+        <div class="cat" *ngFor="let cat of list_cat"
+          (click)="goToCategory(cat)">
+          <span class="card-title">{{ cat.name }}</span>
+          <div class="img-container">
+            <img src="{{cat.img}}" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+</ion-content>
+

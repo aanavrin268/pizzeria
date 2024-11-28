@@ -22,6 +22,14 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/product/product.page').then( m => m.ProductPage)
   },
   {
+    path:  'inventario',
+    loadComponent: () => import('./dashboard/invetario/invetario.page').then(m => m.InvetarioPage)
+  },
+  {
+    path: 'category',
+    loadComponent: () => import('./dashboard/category-page/category-page.page').then( m => m.CategoryPagePage)
+  },
+  {
     path: 'shoping',
     loadComponent: () => import('./dashboard/shoping-cart/shoping-cart.page').then( m => m.ShopingCartPage)
   },
@@ -34,7 +42,17 @@ export const routes: Routes = [
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full',
+  },
+  {
+    path: 'invetario',
+    loadComponent: () => import('./dashboard/invetario/invetario.page').then( m => m.InvetarioPage)
+  },
+  {
+    path: 'category',
+    loadComponent: () => import('./dashboard/category-page/category-page.page').then( m => m.CategoryPagePage)
   }
+
+
 
 
 ];
