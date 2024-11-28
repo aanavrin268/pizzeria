@@ -25,7 +25,7 @@ export class InvetarioPage implements OnInit {
 
   constructor(private router: Router, private modalController: ModalController) {
     this.allCategories = [
-      {name:"Verduras", img:"assets/verduras.png"}, {name:"Carnes", img:"assets/carne.png"},  {name:"Bebidas", img:"assets/refresco.png"},
+      {name:"Verduras", img:"assets/ver.png"}, {name:"Carnes", img:"assets/carne.png"},  {name:"Bebidas", img:"assets/refresco.png"},
       {name:"Salsas", img:"assets/salsas.png"},    {name:"Masas", img:"assets/salsas.png"},   {name:"Materia prima", img:"assets/salsas.png"},
     ]
 
