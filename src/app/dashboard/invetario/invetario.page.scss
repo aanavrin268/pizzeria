@@ -1,0 +1,110 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+
+    .header{
+        display: flex;
+        width:100%;
+        height:10%;
+        //background-color: aqua;
+        
+    }
+
+
+    .body{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        height:90%;
+        padding: 1rem;
+        //background-color: gray;
+
+        .input-container{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5%;
+            height: 6%;
+            border-radius: 16px;
+            border: 1px solid #d7d7d7;
+            position: relative;
+            margin-bottom: 1.5rem;
+
+            .icon-s{
+                background-color: gainsboro;
+                padding: .3rem;
+                position: absolute;
+            }
+
+
+            input{
+                outline: none;
+                padding: .1rem .8rem;
+                border: none;
+            }
+
+            .line-v{
+                height:100%;
+                width: 1px;
+                background-color: black;
+            }
+
+            .blue{
+                color: blue;
+            }
+        }
+
+
+        .cat-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: baseline;
+            margin-top: 1rem;
+
+            .cat{
+                display: flex;
+                border-radius: 18px;
+                border: 1px solid #c5c5c5;
+                padding: 1rem;
+                width: calc(50% - 16px);
+                height: 60%;
+                position: relative;
+                overflow: hidden;
+                justify-content: flex-start;
+                align-items: center;
+
+            .card-title{
+                line-height: 1.1;
+                font-weight: 560;
+                color: rgb(36, 36, 36);
+            }
+
+
+                .img-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.5rem;
+                    /* background-color: red; */
+                    position: absolute;
+                    width: 50%;
+                    height: 110%;
+                    right: -10%;
+                    top: 25%;
+                    z-index: revert-layer;
+
+                    img{
+                        width:100%;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
