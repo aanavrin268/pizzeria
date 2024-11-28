@@ -66,6 +66,11 @@ export class HomePage implements OnInit {
   }
 
 
+  goInventary(){
+    this.router.navigate(['/inventario']);
+  }
+
+
   addNewItem(produc:any){
     this.list_cart.push(produc);
     //this.cartService.addProduct(produc);
