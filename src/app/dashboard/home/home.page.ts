@@ -43,9 +43,6 @@ export class HomePage implements OnInit {
       {id:3, title: "12 Rebanadas", text: "2x1 Grande", price: "285", image: "assets/paquete1.png"},
       {id:4, title: "16 Rebanadas", text: "2x1 Familiar", price: "330", image: "assets/paquete2.png"},
       {id:5, title: "22 Cuadros", text: "2x1 Mega", price: "399", image: "assets/paquete5.png"},
-
-
-
   ]
 
   this.list_top = [
@@ -72,7 +69,9 @@ export class HomePage implements OnInit {
 
 
   goToProduct(product: any){
-    this.router.navigate(["/product"]);
+    this.router.navigate(["/product"],
+      {state: { product} }
+    );
 
   }
 

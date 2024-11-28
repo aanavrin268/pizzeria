@@ -1,32 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
+  <ion-toolbar >
+    <ion-title>Pizzería</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tabs</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-tabs>
+    <ion-tab tab="home">
+      <app-home></app-home>
+    </ion-tab>
+
+    <ion-tab tab="about">
+      <!--<app-about></app-about>-->
+    </ion-tab>
+
+    <ion-tab tab="contact">
+      <!--<app-contact></app-contact>-->
+    </ion-tab>
+
+    <ion-tab tab="profile">
+     <!-- <app-profile></app-profile>-->
+    </ion-tab>
+
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
+        <i class="bi bi-house-fill"></i>
+        <ion-label>Inicio</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="about">
-        <ion-icon name="information-circle"></ion-icon>
-        <ion-label>About</ion-label>
+        <i class="bi bi-cart4"></i>
+        <ion-label>Carrito</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="add" class="center-tab">
+        <i class="bi bi-plus"></i>
       </ion-tab-button>
 
       <ion-tab-button tab="contact">
-        <ion-icon name="call"></ion-icon>
-        <ion-label>Contact</ion-label>
+        <i class="bi bi-clipboard-check-fill"></i>
+        <ion-label>Inventario</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="profile">
+        <i class="bi bi-person-circle"></i>
+        <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
+
+
   </ion-tabs>
 </ion-content>
-

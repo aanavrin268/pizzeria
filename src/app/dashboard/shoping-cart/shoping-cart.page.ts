@@ -16,6 +16,8 @@ export class ShopingCartPage implements OnInit {
   protected list_cart: any[] = [
     {image:"assets/burguer1.png", price: 55, name: "Hamburguesa", cuantity:1, sub: 55},
     {image:"assets/espa1.png", price: 105, name: "Espaghetti", cuantity:1, sub: 105},
+    {image:"assets/burguer1.png", price: 55, name: "Hamburguesa", cuantity:1, sub: 55},
+    {image:"assets/burguer1.png", price: 55, name: "Hamburguesa", cuantity:1, sub: 55},
 
   ];
 

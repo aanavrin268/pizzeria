@@ -147,14 +147,17 @@
         flex-direction: column;
         justify-content: center;
         padding: .5rem .8rem;
+        background-color: transparent;
 
         .payment-details{
+            position: relative;
+            z-index: 100;
             flex-direction: column;
             display: flex;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(180, 180, 180, 0.3)); /* Degradado gris claro a gris oscuro */
-            backdrop-filter: blur(10px); /* Desenfoque de fondo */
+            //backdrop-filter: blur(10px); /* Desenfoque de fondo */
             border-radius: 10px; /* Bordes redondeados */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */            border-radius: 16px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.201);

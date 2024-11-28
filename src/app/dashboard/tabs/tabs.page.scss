@@ -1,0 +1,37 @@
+ion-toolbar{
+  --color: white;
+  --background:purple;
+
+}
+.center-tab {
+  --background: #ff7f3f;
+   border-radius: 50%;
+   height: 70px;
+   width: 70px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-top: -15px;
+  position: relative;
+  z-index: 1;
+}
+
+.center-tab i {
+  font-size: 30px;
+  color: white;
+}
+
+ion-tab-bar {
+  --background: transparent;
+    height: 100px;
+  border: 0;
+}
+
+ion-tab-button {
+  --padding-bottom: 10px;
+  --background:grey;
+    height: 60%;
+}
+
+ion-tab-button i {
+  font-size: 16px;
+  color: #555;
+}
