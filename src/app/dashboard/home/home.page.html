@@ -1,51 +1,44 @@
-<div class="">
+
     <app-headers [cart]="list_cart" class="m-0 p-0 col-12"></app-headers>
     <div class="main-container  m-0">
         <span class="text-order fw-bold text-muted">Orden #100</span>
         <span class="brand-name">Paquetes</span>
-        <div class="contenedor">
-          <div class="paquete" *ngFor="let item of list_paquetes" (click)="addPaquete(item)">
-            <div class="col-12 cnt-paquete" *ngIf="item.id === selectedId">
-              <div class="paquete-over" >
-                <button class="over-btn" (click)="addNewItem(item)">
-                  <i class="fas fa-plus-circle"></i> <!-- Ícono de agregar -->
-                  Agregar
-                </button>
-              </div>
-            </div>
-            <div class="h-container" [ngClass]="{'overlay-black': item.id === selectedId}">
-              <div class="left brand-name">
-                <span class="item-title">{{item.title}}</span>
-                <span class="item-sub">{{item.text}}</span>
-                <span class="item-price">${{item.price}}.00</span>
-              </div>
-              <div class="right">
-                <img src="{{item.image}}" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="top-container">
+      <div class="cards-pqt">
+        <ion-content>
+          <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide *ngFor="let item of list_paquetes; let i = index">
+              <ion-card (click)="toggleInfo(i)" class="custom-card">
+                <ion-card-content class="p-0 m-0">
+                  <div class="image-container">
+                    <img src="{{item.image}}" class="img-paquetes" alt="Paquete" [ngClass]="{'blurred': item.showInfo}">
+                  </div>
+                  <div *ngIf="item.showInfo" class="info-container">
+                    <h2 class="info-title">{{ item.title }}</h2>
+                    <p class="info-text">{{ item.text }}</p>
+                    <p class="info-price">{{ item.price | currency: 'USD' }}</p>
+                    <button class="btn btn-primary">
+                      <i class="bi bi-plus-circle-fill me-2"></i> Agregar
+                    </button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-content>
+      </div>
+      <div class="top-container">
           <div class="top" *ngFor="let top of list_top" (click)="goToProduct(top)">
             <div class="img-container">
               <img src="{{top.img}}" alt="">
-
             </div>
               <span class="text-top">{{ top.title }}</span>
           </div>
-        </div>
+      </div>
 
-        <button (click)="goInventary()">inventario</button>
+      <button (click)="goInventary()">inventario</button>
 
-
-
-
-  <!----NOTIFICACION-->
         <div class="message-container" *ngIf="showNoti">
           <span>Paquete # agregado!</span>
         </div>
-
     </div>
-  <!--<app-footer class="m-0 p-0"></app-footer>-->
-</div>
+

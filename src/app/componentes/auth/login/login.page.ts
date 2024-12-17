@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
     setTimeout(() => {
       this.loading = false;
       // Tu lógica de login aquí
-      this.router.navigate(["/home"]);
+      this.router.navigate(["/tabs"]);
     }, 2000);
 
   }
